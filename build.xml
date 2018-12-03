@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="JavaANTExample" basedir="." default="builddist">
+<project name="JCG" basedir="." default="builddist">
 
 	<property file="build.properties"></property>
 
