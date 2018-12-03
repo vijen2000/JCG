@@ -23,7 +23,7 @@ stages{
            }
 	steps{
             echo 'Source Checkout'
-			checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], gitTool: 'git1.9', submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GitHUB', url: 'https://github.com/vijen2000/JCG.git']]])
+			checkout([$class: 'GitSCM', branches: [[name: '*/test_ant_1']], doGenerateSubmoduleConfigurations: false, extensions: [], gitTool: 'git1.9', submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GitHUB', url: 'https://github.com/vijen2000/JCG.git']]])
 		}
 	}
 }	
@@ -32,7 +32,7 @@ stages{
 			
 			echo 'Compiling the code'
 			withAnt(installation: 'ANT', jdk: 'jdk1.8') {			
-			ant GenerateEAR
+			ant compile
 				}
 		}
 	}
