@@ -1,7 +1,3 @@
-//import com.att.sdt.Utilities
-
-#!groovy
-
 pipeline{
 agent any
 options {
@@ -20,7 +16,11 @@ environment {
 }
 stages{
     stage("Checkout"){
-	
+	    when {
+            anyOf {
+                branch "test_ant_1*"
+            }
+           }
 	steps{
             echo 'Source Checkout'
 			checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], gitTool: 'git1.9', submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GitHUB', url: 'https://github.com/vijen2000/JCG.git']]])
