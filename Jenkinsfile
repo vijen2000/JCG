@@ -31,6 +31,9 @@ stages{
 	stage ("Compile"){
 			
 			echo 'Compiling the code'
-			ant 
+			withAnt(installation: 'ANT', jdk: 'jdk1.8') {			
+			ant GenerateEAR
+				}
 		}
+	}
 }
